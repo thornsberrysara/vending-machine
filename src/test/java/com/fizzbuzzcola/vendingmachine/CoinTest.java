@@ -17,4 +17,9 @@ public class CoinTest {
     public void dimesShouldBeACoin(){
         Coin underTest = new Dime();
     }
+
+    @Test
+    public void nicklesShouldBeACoin(){
+        Coin underTest = new Nickle();
+    }
 }
