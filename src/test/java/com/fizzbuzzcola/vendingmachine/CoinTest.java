@@ -7,4 +7,9 @@ public class CoinTest {
     public void coinsShouldExist(){
         Coin underTest;
     }
+
+    @Test
+    public void penniesShouldBeACoin(){
+        Coin underTest = new Penny();
+    }
 }
