@@ -16,4 +16,10 @@ public class CoinValueTest {
         Coin underTest = new Nickle();
         assertThat(underTest.value).isEqualTo(.05);
     }
+
+    @Test
+    public void dimesShouldBeWorthTenCents(){
+        Coin underTest = new Dime();
+        assertThat(underTest.value).isEqualTo(.10);
+    }
 }
