@@ -10,4 +10,10 @@ public class CoinValueTest {
         Coin underTest = new Penny();
         assertThat(underTest.value).isEqualTo(.01);
     }
+
+    @Test
+    public void nicklesShouldBeWorthFiveCents(){
+        Coin underTest = new Nickle();
+        assertThat(underTest.value).isEqualTo(.05);
+    }
 }
