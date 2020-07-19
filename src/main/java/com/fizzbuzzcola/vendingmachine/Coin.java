@@ -1,4 +1,4 @@
 package com.fizzbuzzcola.vendingmachine;
 
-public class CoinValue {
+public class Coin {
 }
