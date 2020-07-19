@@ -22,4 +22,9 @@ public class CoinTest {
     public void nicklesShouldBeACoin(){
         Coin underTest = new Nickle();
     }
+
+    @Test
+    public void quartersShouldBeACoin(){
+        Coin underTest = new Quarter();
+    }
 }
