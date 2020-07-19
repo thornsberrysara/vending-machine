@@ -12,4 +12,9 @@ public class CoinTest {
     public void penniesShouldBeACoin(){
         Coin underTest = new Penny();
     }
+
+    @Test
+    public void dimesShouldBeACoin(){
+        Coin underTest = new Dime();
+    }
 }
