@@ -22,4 +22,10 @@ public class CoinValueTest {
         Coin underTest = new Dime();
         assertThat(underTest.value).isEqualTo(.10);
     }
+
+    @Test
+    public void quartersShouldBeWorthTwentyFiveCents(){
+        Coin underTest = new Quarter();
+        assertThat(underTest.value).isEqualTo(.25);
+    }
 }
