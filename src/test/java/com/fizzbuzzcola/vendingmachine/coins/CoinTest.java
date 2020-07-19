@@ -1,5 +1,6 @@
-package com.fizzbuzzcola.vendingmachine;
+package com.fizzbuzzcola.vendingmachine.coins;
 
+import com.fizzbuzzcola.vendingmachine.coins.*;
 import org.junit.jupiter.api.Test;
 
 public class CoinTest {
