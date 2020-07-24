@@ -1,9 +1,12 @@
 package com.fizzbuzzcola.vendingmachine;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VendingMachine {
     private BigDecimal coinSlotBalance = BigDecimal.ZERO;
+    private List<String> coinReturn = new ArrayList<>();
 
     public String displayStatus() {
         if (coinSlotBalance.doubleValue() == 0) {
@@ -20,6 +23,14 @@ public class VendingMachine {
         }
         if(coin.equalsIgnoreCase("Quarter")) {
             coinSlotBalance = coinSlotBalance.add(BigDecimal.valueOf(0.25));
+        } else {
+            coinReturn.add(coin);
         }
+    }
+
+    public List<String> emptyCoinReturn() {
+        List<String> coinReturnContents = List.copyOf(coinReturn);
+        coinReturn.clear();
+        return coinReturnContents;
     }
 }

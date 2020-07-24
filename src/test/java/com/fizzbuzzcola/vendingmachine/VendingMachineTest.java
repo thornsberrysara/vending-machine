@@ -3,6 +3,8 @@ package com.fizzbuzzcola.vendingmachine;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class VendingMachineTest {
@@ -36,5 +38,13 @@ public class VendingMachineTest {
     public void whenQuarterInsertedDisplayUpdate() {
         underTest.insertCoin("Quarter");
         assertThat(underTest.displayStatus()).isEqualTo("0.25");
+    }
+
+    @Test
+    public void shouldRejectPennyWhenInserted() {
+        underTest.insertCoin("Penny");
+        assertThat(underTest.displayStatus()).isEqualTo("Insert Coin");
+        List<String> returnedCoins = underTest.emptyCoinReturn();
+        assertThat(returnedCoins).containsExactly("Penny");
     }
 }
