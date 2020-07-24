@@ -47,4 +47,11 @@ public class VendingMachineTest {
         List<String> returnedCoins = underTest.emptyCoinReturn();
         assertThat(returnedCoins).containsExactly("Penny");
     }
+
+    @Test
+    public void ifColaIsSelectedBeforeEnoughMoneyInsertedDisplayShouldReturnPrice() {
+        underTest.selectProduct("Cola");
+        assertThat(underTest.displayStatus()).isEqualTo("Price: $1.00");
+
+    }
 }

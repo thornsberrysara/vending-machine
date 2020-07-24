@@ -7,11 +7,21 @@ import java.util.List;
 public class VendingMachine {
     private BigDecimal coinSlotBalance = BigDecimal.ZERO;
     private List<String> coinReturn = new ArrayList<>();
+    private String displayMessage;
 
     public String displayStatus() {
+        if (displayMessage == "Price: $1.00") {
+            String updatedMessage = displayMessage;
+            displayMessage = "";
+            return updatedMessage;
+        }
         if (coinSlotBalance.doubleValue() == 0) {
-            return "Insert Coin";
-    } return coinSlotBalance.setScale(2).toString();
+            displayMessage = "Insert Coin";
+            return displayMessage;
+        }
+            displayMessage = coinSlotBalance.setScale(2).toString();
+            return displayMessage;
+
     }
 
     public void insertCoin(String coin) {
@@ -32,5 +42,13 @@ public class VendingMachine {
         List<String> coinReturnContents = List.copyOf(coinReturn);
         coinReturn.clear();
         return coinReturnContents;
+    }
+
+    public void selectProduct(String product) {
+        if(product.equalsIgnoreCase("Cola")) {
+            if(coinSlotBalance.doubleValue() < 1.00) {
+                displayMessage = "Price: $1.00";
+            }
+        }
     }
 }
