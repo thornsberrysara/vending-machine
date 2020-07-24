@@ -15,5 +15,8 @@ public class VendingMachine {
         if(coin.equalsIgnoreCase("Nickel")) {
             coinSlotBalance = coinSlotBalance.add(BigDecimal.valueOf(0.05));
         }
+        if(coin.equalsIgnoreCase("Dime")) {
+            coinSlotBalance = coinSlotBalance.add(BigDecimal.valueOf(0.10));
+        }
     }
 }

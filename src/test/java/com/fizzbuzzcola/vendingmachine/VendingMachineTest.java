@@ -21,8 +21,14 @@ public class VendingMachineTest {
     }
 
     @Test
-    public void whenValidCoinInsertedDisplayUpdates() {
+    public void whenNickelInsertedDisplayUpdate() {
         underTest.insertCoin("Nickel");
         assertThat(underTest.displayStatus()).isEqualTo("0.05");
+    }
+
+    @Test
+    public void whenDimeInsertedDisplayUpdate() {
+        underTest.insertCoin("Dime");
+        assertThat(underTest.displayStatus()).isEqualTo("0.10");
     }
 }
