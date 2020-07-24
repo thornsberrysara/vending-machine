@@ -31,4 +31,10 @@ public class VendingMachineTest {
         underTest.insertCoin("Dime");
         assertThat(underTest.displayStatus()).isEqualTo("0.10");
     }
+
+    @Test
+    public void whenQuarterInsertedDisplayUpdate() {
+        underTest.insertCoin("Quarter");
+        assertThat(underTest.displayStatus()).isEqualTo("0.25");
+    }
 }
