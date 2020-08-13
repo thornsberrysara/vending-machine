@@ -52,6 +52,5 @@ public class VendingMachineTest {
     public void ifColaIsSelectedBeforeEnoughMoneyInsertedDisplayShouldReturnPrice() {
         underTest.selectProduct("Cola");
         assertThat(underTest.displayStatus()).isEqualTo("Price: $1.00");
-
     }
 }
